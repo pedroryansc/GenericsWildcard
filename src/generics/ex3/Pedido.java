@@ -3,7 +3,7 @@ package generics.ex3;
 import java.util.ArrayList;
 import java.util.List;
 
-public class Pedido<T> {
+public class Pedido<T extends LojaVideogame> {
 
 	private List<T> listaProdutos = new ArrayList<T>();
 	

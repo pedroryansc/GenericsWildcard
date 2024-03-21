@@ -2,87 +2,30 @@ package generics.ex3;
 
 import java.time.LocalDate;
 
-public class Jogo {
+public class Jogo extends LojaVideogame {
 
-	private int id;
-	private String nome;
-	private double preco;
-	private LocalDate dataLancamento;
-	private String desenvolvedora;
-	private String distribuidora;
+	private String plataforma;
 	
-	public Jogo(int id, String nome, double preco, LocalDate dataLancamento, String desenvolvedora, String distribuidora) {
-		setId(id);
-		setNome(nome);
-		setPreco(preco);
-		setDataLancamento(dataLancamento);
-		setDesenvolvedora(desenvolvedora);
-		setDistribuidora(distribuidora);
+	public Jogo(String nome, double preco, LocalDate dataLancamento, String plataforma) {
+		super(nome, preco, dataLancamento);
+		setPlataforma(plataforma);
 	}
-
-	public int getId() {
-		return id;
+	
+	public String getPlataforma() {
+		return plataforma;
 	}
-
-	public void setId(int id) {
-		this.id = id;
-	}
-
-	public String getNome() {
-		return nome;
-	}
-
-	public void setNome(String nome) {
-		this.nome = nome;
-	}
-
-	public double getPreco() {
-		return preco;
-	}
-
-	public void setPreco(double preco) {
-		this.preco = preco;
-	}
-
-	public LocalDate getDataLancamento() {
-		return dataLancamento;
-	}
-
-	public void setDataLancamento(LocalDate dataLancamento) {
-		this.dataLancamento = dataLancamento;
-	}
-
-	public String getDesenvolvedora() {
-		return desenvolvedora;
-	}
-
-	public void setDesenvolvedora(String desenvolvedora) {
-		this.desenvolvedora = desenvolvedora;
-	}
-
-	public String getDistribuidora() {
-		return distribuidora;
-	}
-
-	public void setDistribuidora(String distribuidora) {
-		this.distribuidora = distribuidora;
+	
+	public void setPlataforma(String plataforma) {
+		this.plataforma = plataforma;
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder builder = new StringBuilder();
-		builder.append("Jogo [id=");
-		builder.append(id);
-		builder.append(", nome=");
-		builder.append(nome);
-		builder.append(", preco=");
-		builder.append(preco);
-		builder.append(", dataLancamento=");
-		builder.append(dataLancamento);
-		builder.append(", desenvolvedora=");
-		builder.append(desenvolvedora);
-		builder.append(", distribuidora=");
-		builder.append(distribuidora);
+		builder.append("Jogo [plataforma=");
+		builder.append(plataforma);
+		builder.append(", toString()=");
+		builder.append(super.toString());
 		builder.append("]");
 		return builder.toString();
 	}
